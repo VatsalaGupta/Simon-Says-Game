@@ -66,7 +66,11 @@ function checkAnswer(currentLevel) {
         }
     } else {
         playSound("wrong");
-        document.querySelector("h3").innerText = "Game Over, Press Any Key to Restart";
+        document.querySelector("h3").innerHTML = `Game Over!Your Score was <b>${level}</b> <br> Press Any Key to Restart`;
+        document.querySelector("body").style.backgroundColor ="red";
+        setTimeout(function () {
+            document.querySelector("body").style.backgroundColor ="white";
+        },150);
         startOver();
     }
 }
