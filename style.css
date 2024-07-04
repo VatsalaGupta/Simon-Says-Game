@@ -1,71 +1,111 @@
-/* style.css */
 body {
     text-align: center;
-    background-color: #f3f3f3;
+    background-color: white;
     font-family: Arial, sans-serif;
+    transition: background-color 0.3s ease;
     margin: 0;
     padding: 0;
 }
 
-h1, h3 {
-    margin: 20px 0;
+h1 {
+    font-weight: bolder;
+    font-size: 2.5rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
 }
 
 .btn-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem auto;
     max-width: 600px;
-    margin: auto;
-    gap: 10px;
 }
 
 .btn {
-    flex: 1 1 45%;
-    height: 100px;
-    margin: 5px;
-    border-radius: 15px;
+    height: 150px;
+    width: 150px;
+    border-radius: 20%;
+    border: 10px solid black;
+    margin: 1rem;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.5em;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
-.red { background-color: red; }
-.green { background-color: green; }
-.yellow { background-color: yellow; color: black; }
-.purple { background-color: purple; }
-
-.pressed {
-    box-shadow: 0 0 10px white;
+.btn.yellow {
+    background-color: rgb(249, 245, 11);
+}
+.btn.purple {
+    background-color: rgb(29, 76, 230);
+}
+.btn.green {
+    background-color: rgb(54, 240, 54);
+}
+.btn.red {
+    background-color: rgb(255, 26, 26);
 }
 
+/* Flashing effect */
 .flash {
-    opacity: 0.5;
+    opacity: 0.7;
+    transform: scale(1.1);
+    transition: opacity 0.25s, transform 0.25s;
 }
 
-/* Responsive styles */
-@media (max-width: 600px) {
+/* Responsive Design */
+
+/* Tablets and larger phones */
+@media (max-width: 768px) {
+    .btn {
+        height: 120px;
+        width: 120px;
+        margin: 0.75rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Small tablets and larger phones */
+@media (max-width: 576px) {
+    .btn {
+        height: 100px;
+        width: 100px;
+        margin: 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Small phones */
+@media (max-width: 360px) {
     .btn {
         height: 80px;
-        font-size: 1em;
+        width: 80px;
+        margin: 0.25rem;
+        border-width: 5px;
     }
 
-    .btn-container {
-        gap: 5px;
-    }
-}
-
-@media (max-width: 400px) {
-    .btn {
-        height: 60px;
-        font-size: 0.8em;
+    h1 {
+        font-size: 1.5rem;
     }
 
-    h1, h3 {
-        font-size: 1.2em;
+    h3 {
+        font-size: 0.875rem;
     }
 }
